@@ -8,10 +8,11 @@ using namespace std;
 class Solution{
 public:
 	// function to return sum of  1, 2, ... n
-	long long seriesSum(long n) {
+	long long seriesSum(int n) {
 	    // code here
 	    
-	    return (n*(n+1))/2;
+	    long a= n;
+	    return (a*(a+1))/2;;
 	}
 };
 
