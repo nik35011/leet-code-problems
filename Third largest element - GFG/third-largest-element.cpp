@@ -8,30 +8,18 @@ class Solution{
     int thirdLargest(int a[], int n)
     {
          //Your code here
-         if(n<3){
-             return -1;
-         }
-         int first_largest = INT_MIN;
-         int second_largest = INT_MIN;
-         int third_largest = INT_MIN;
-         
-         for(int i=0;i<n;i++){
-             if(a[i]>first_largest){
-                 third_largest = second_largest;
-                 second_largest = first_largest;
-                 first_largest = a[i];
-        
+    int j=0;
+    int maxi = INT_MIN;
+         while(j<3){
+             for(int i=0;i<n-j-1;i++){
+                 if(a[i]>a[i+1])
+                 swap(a[i],a[i+1]);
+                 
              }
-              if(a[i]<first_largest && a[i]>second_largest){
-                 third_largest = second_largest;
-                 second_largest = a[i];
-                }
-                if(a[i]<second_largest && a[i]>third_largest){
-                    third_largest = a[i];                    
-                }
+             j++;
+             
          }
-         
-         return third_largest;
+         return a[n-3];
     }
 
 };
